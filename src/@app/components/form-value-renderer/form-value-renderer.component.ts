@@ -4,7 +4,11 @@ import { OBSERVE_PROVIDER, OBSERVE, ObserveFn, Observed } from 'ng-observe';
 
 @Component({
   selector: 'form-value-renderer',
-  templateUrl: './form-value-renderer.component.html',
+  template: `
+    <p>
+      {{ formValue?.value | json }}
+    </p>
+  `,
   styleUrls: ['./form-value-renderer.component.css'],
   providers: [OBSERVE_PROVIDER],
 })
