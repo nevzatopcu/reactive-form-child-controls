@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup">
+  <div class="form-group">
+    <label for="company-name" class="label col-form-label">Company Name</label>
+    <input class="form-control" id="company-name" formControlName="name" />
+  </div>
+
+  <div id="address" formGroupName="address">
+    <address-form></address-form>
+  </div>
+
+  <div class="child-section">
+    <div class="d-flex justify-content-between">
+      <p class="h3 h3-responsive">Employees</p>
+      <add-employee></add-employee>
+    </div>
+
+    <div id="employees" formArrayName="employees">
+      <ng-container *ngFor="let employee of employees.controls; let i = index" [formGroupName]="i">
+        <employee-form [identifier]="i"></employee-form>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <form-value-renderer></form-value-renderer>
+  </div>
+</form>

@@ -1,0 +1,5 @@
+.child-section {
+  padding: 20px;
+  border: 1px dashed grey;
+  min-height: 40vh;
+}
