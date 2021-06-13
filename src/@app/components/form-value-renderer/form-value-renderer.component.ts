@@ -6,15 +6,15 @@ import { OBSERVE_PROVIDER, OBSERVE, ObserveFn, Observed } from 'ng-observe';
   selector: 'form-value-renderer',
   template: `
     <p>
-      {{ formValue?.value | json }}
+      {{ formValue.value | json }}
     </p>
   `,
   styleUrls: ['./form-value-renderer.component.css'],
   providers: [OBSERVE_PROVIDER],
 })
 export class FormValueRendererComponent implements OnInit {
-  private formGroup: FormGroup | null = null;
-  formValue: Observed<any, any> | null = null;
+  private formGroup!: FormGroup;
+  formValue!: Observed<any, any>;
 
   constructor(
     @SkipSelf()
